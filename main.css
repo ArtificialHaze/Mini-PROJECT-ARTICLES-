@@ -1,0 +1,155 @@
+/* GLOBAL STYLING */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+/* MAIN STYLING */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.img img {
+  display: block;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.article__preview {
+  padding: 32px 32px 0px;
+}
+
+.article__preview h1 {
+  font-size: 16px;
+  color: #48556a;
+  margin-bottom: 12px;
+}
+
+.article__preview p {
+  color: #6e8098;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.share {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 22px 32px;
+}
+
+.author {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  align-items: center;
+}
+
+.author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.author__details p {
+  font-size: 12px;
+  color: #48556a;
+}
+
+.author span {
+  font-size: 12px;
+  color: #9daec2;
+}
+
+.share__image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share__image .fa-share-alt {
+  pointer-events: none;
+  display: block;
+}
+
+.share__bar__desktop,
+.share__bar__mobile {
+  background-color: #48556a;
+  text-transform: uppercase;
+  color: #9daec2;
+  gap: 18px;
+  font-size: 12px;
+  align-items: center;
+  flex: 1;
+}
+
+.share__bar__desktop {
+  display: flex;
+  position: absolute;
+  padding: 18px 32px;
+  border-radius: 12px;
+  top: -45px;
+  transition: all 350ms ease-in-out;
+  opacity: 0;
+}
+
+.share__bar__mobile {
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+}
+
+.active__share__mobile {
+  background-color: #48556a;
+  border-radius: 0 0 12px 12px;
+}
+
+.active__share__mobile .author {
+  display: none;
+}
+
+.active__share__mobile .share__bar__mobile {
+  display: flex;
+}
+
+.active__share__desktop .share__bar__desktop {
+  opacity: 1;
+}
+
+/* RESPONSIVE DESKTOP*/
+
+@media (min-width: 750px) {
+  .card {
+    flex-direction: row;
+    max-width: 750px;
+  }
+  .img img {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 12px 0 0 12px;
+  }
+}
